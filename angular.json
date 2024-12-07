@@ -7,7 +7,18 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "skipTests": true
+        }
+      },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru": {
+            "translation": "src/i18n/messages.xlf",
+            "baseHref": ""
+          }
         }
       },
       "root": "",
@@ -17,6 +28,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": ["ru"],
             "outputPath": "dist/bookly",
             "index": "src/index.html",
             "browser": "src/main.ts",
