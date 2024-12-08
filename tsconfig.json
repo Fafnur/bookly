@@ -21,6 +21,7 @@
     "paths": {
       "@bookly/core": ["src/app/core/index.ts"],
       "@bookly/home/page": ["src/app/home/page/index.ts"],
+      "@bookly/ui/container": ["src/app/ui/container/index.ts"],
       "@bookly/ui/layout": ["src/app/ui/layout/index.ts"]
     }
   },
