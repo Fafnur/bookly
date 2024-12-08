@@ -1,3 +1,11 @@
 import type { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { LayoutComponent } from '@bookly/ui/layout';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [],
+  },
+];

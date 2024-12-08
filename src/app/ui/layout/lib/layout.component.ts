@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+
 @Component({
   selector: 'app-layout',
-  imports: [],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutComponent {
-
-}
+export class LayoutComponent {}
