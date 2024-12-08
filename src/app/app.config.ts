@@ -7,5 +7,5 @@ import { provideCurrency } from '@bookly/core';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideCurrency('RUD')],
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideCurrency('RUВ')],
 };
