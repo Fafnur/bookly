@@ -3,10 +3,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-container',
   imports: [],
-  templateUrl: './container.component.html',
+  template: '<ng-content/>',
   styleUrl: './container.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContainerComponent {
-
-}
+export class ContainerComponent {}
