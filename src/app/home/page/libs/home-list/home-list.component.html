@@ -1,5 +1,10 @@
-<ul>
-  @for (book of books; track books) {
-    <li>{{ book }}</li>
-  }
-</ul>
+@for (book of books(); track book.uuid) {
+  <button type="button" class="book-card" (click)="onSelected(book)">
+    <h3>{{ book.title }}</h3>
+    <p>
+      @for (author of book.authors; track author; let last = $last) {
+        <a>{{ author }}</a>
+      }
+    </p>
+  </button>
+}

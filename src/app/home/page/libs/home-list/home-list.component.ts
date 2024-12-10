@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+
+import type { Book } from '@bookly/books/common';
 
 @Component({
   selector: 'app-home-list',
@@ -8,5 +10,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeListComponent {
-  readonly books: string[] = ['Book 1', 'Book 2', 'Book 3', 'Book 4', 'Book 5', 'Book 6'];
+  readonly books = input.required<Book[]>();
+
+  readonly selected = output<Book>();
+
+  onSelected(book: Book) {
+    this.selected.emit(book);
+  }
 }

@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  background-color: whitesmoke;
+  width: 25%;
+}

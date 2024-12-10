@@ -1,4 +1,13 @@
 <app-container>
   <p>home-page works!</p>
-  <app-home-list />
+  <app-home-list [books]="books" (selected)="onSelected($event)" />
+
+  @if (selectedBook) {
+    <p>{{ selectedBook.title }}</p>
+    <p>
+      <button type="button" (click)="onReset()">Сбросить</button>
+    </p>
+  } @else {
+    <p>Книга не выбрана</p>
+  }
 </app-container>
