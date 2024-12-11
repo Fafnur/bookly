@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 import type { Book } from '@bookly/books/common';
+
 import { HomeBookComponent } from './home-book/home-book.component';
 
 @Component({

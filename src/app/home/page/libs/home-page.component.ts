@@ -13,7 +13,7 @@ import { HomeListComponent } from './home-list/home-list.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
-  readonly books: Book[] = [
+  books: Book[] = [
     {
       title: 'Цель. Процесс непрерывного совершенствования',
       uuid: 'uuid-1',
@@ -45,6 +45,7 @@ export class HomePageComponent {
   ];
 
   selectedBook?: Book;
+  isHide = false;
 
   onSelected(book: Book) {
     this.selectedBook = book;
@@ -52,5 +53,26 @@ export class HomePageComponent {
 
   onReset() {
     this.selectedBook = undefined;
+  }
+
+  onHide() {
+    this.isHide = true;
+  }
+
+  onShow() {
+    this.isHide = false;
+  }
+
+  onChangeBooks() {
+    this.books = [
+      ...this.books,
+      {
+        title: `Кто. Решите вашу проблему номер ${this.books.length - 3}`,
+        uuid: `uuid-${this.books.length + 1}`,
+        description:
+          'Авторы книги, эксперты в области найма Джефф Смарт и Рэнди Стрит, предлагают простое и эффективное решение главной проблемы – выбора неправильных сотрудников. Вы узнаете, где найти правильных людей и как привлечь их на работу, как расценивать ответы кандидатов и чего ни в коем случае нельзя делать на собеседовании. ',
+        authors: ['Джефф Смарт', 'Рэнди Стрит'],
+      },
+    ];
   }
 }
