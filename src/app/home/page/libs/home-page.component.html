@@ -1,1 +1,23 @@
-<p>home-page works!</p>
+<app-container>
+  <p>home-page works!</p>
+  @if (!isHide) {
+    <app-home-list [books]="books" (selected)="onSelected($event)">
+      <p>Книги по акции</p>
+      <h2>Популярные книги</h2>
+      <h1>Каталог</h1>
+    </app-home-list>
+    <p><button type="button" (click)="onChangeBooks()">Добавить книгу</button></p>
+    <p><button type="button" (click)="onHide()">Скрыть</button></p>
+  } @else {
+    <p><button type="button" (click)="onShow()">Показать</button></p>
+  }
+
+  @if (selectedBook) {
+    <p>{{ selectedBook.title }}</p>
+    <p>
+      <button type="button" (click)="onReset()">Сбросить</button>
+    </p>
+  } @else {
+    <p>Книга не выбрана</p>
+  }
+</app-container>

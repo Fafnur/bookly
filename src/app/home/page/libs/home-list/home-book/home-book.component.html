@@ -1,0 +1,8 @@
+<button type="button" class="book-link" (click)="onSelected()">
+  <h3>{{ book().title }}</h3>
+  <p>
+    @for (author of book().authors; track author; let last = $last) {
+      <a>{{ author }}</a>
+    }
+  </p>
+</button>

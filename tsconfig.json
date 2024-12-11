@@ -19,6 +19,7 @@
     "module": "ES2022",
     "baseUrl": ".",
     "paths": {
+      "@bookly/books/common": ["src/app/books/common/index.ts"],
       "@bookly/core": ["src/app/core/index.ts"],
       "@bookly/home/page": ["src/app/home/page/index.ts"],
       "@bookly/ui/container": ["src/app/ui/container/index.ts"],
