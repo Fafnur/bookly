@@ -1,3 +1,14 @@
-@for (book of books(); track book.uuid) {
-  <app-home-book [book]="book" />
-}
+<ng-content select="h1" />
+<ng-content select="h2" />
+<ng-container *ngTemplateOutlet="discount"></ng-container>
+
+<div class="home-list">
+  @for (book of books(); track book.uuid) {
+    <app-home-book [book]="book" />
+  }
+</div>
+<ng-content select="p" />
+<ng-container *ngTemplateOutlet="discount"></ng-container>
+<ng-template #discount>
+  <p>Купите книги сегодня и получите скидку 30%</p>
+</ng-template>
