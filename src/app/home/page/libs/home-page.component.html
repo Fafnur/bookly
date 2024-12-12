@@ -1,7 +1,8 @@
 <app-container>
   <p>home-page works!</p>
+  <app-home-promo />
   @if (!isHide) {
-    <app-home-list [books]="books" (selected)="onSelected($event)">
+    <app-home-list [books]="books" isHide="" counter="100" [(value)]="volume" (selected)="onSelected($event)">
       <p>Книги по акции</p>
       <h2>Популярные книги</h2>
       <h1>Каталог</h1>

@@ -1,13 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 
 import type { Book } from '@bookly/books/common';
 import { ContainerComponent } from '@bookly/ui/container';
 
 import { HomeListComponent } from './home-list/home-list.component';
+import { HomePromoComponent } from './home-promo/home-promo.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [ContainerComponent, HomeListComponent],
+  imports: [ContainerComponent, HomeListComponent, HomePromoComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -46,6 +47,14 @@ export class HomePageComponent {
 
   selectedBook?: Book;
   isHide = false;
+
+  volume = signal(0);
+
+  constructor() {
+    effect(() => {
+      console.log(`HomePageComponent: ${this.volume()}`);
+    });
+  }
 
   onSelected(book: Book) {
     this.selectedBook = book;
