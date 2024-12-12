@@ -7,6 +7,11 @@
     <app-home-book [book]="book" />
   }
 </div>
+
+<p>
+  <button type="button" (click)="onUp()">Увеличить значение</button>
+</p>
+
 <ng-content select="p" />
 <ng-container *ngTemplateOutlet="discount"></ng-container>
 <ng-template #discount>
